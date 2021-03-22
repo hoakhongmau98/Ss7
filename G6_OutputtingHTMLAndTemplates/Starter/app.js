@@ -13,11 +13,13 @@ http.createServer(function(req, res) {
     res.writeHead(200, { 'Content-Type': 'text/html' });
 
 
-    // var html = fs.readFileSync(__dirname + '/index.html', 'utf8');
-    // var message = 'here ...'
-    // html = html.replace('{Message}', message)
-    // res.end(html);
+    var html = fs.readFileSync(__dirname + '/index.html', 'utf8');
+    var message = 'here ...'
+    html = html.replace('{Message}', message)
+    res.end(html);
+
+    // var message = fs.replaceStream()
 
     // stream and Performance
-    fs.createReadStream(__dirname + '/index.html').pipe(res)
+    // fs.createReadStream(__dirname + '/index.html').pipe(res)
 }).listen(1337, '127.0.0.1');
